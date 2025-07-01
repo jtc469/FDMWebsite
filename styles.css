@@ -1,0 +1,38 @@
+.heading {
+  font-size: 20px;
+  font-style: italic;
+}
+
+* {
+  color: white;
+  font-family: "Lora";
+}
+
+body {
+  background-color: black;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#apodBox { 
+  margin-top: 3cm;
+}
+
+.rocket_background{
+  margin-top: 3cm;
+  background-color: rgb(23, 23, 23);
+  display:flex;                 
+  justify-content:space-between;
+  padding:0 ;                
+}
+
+.rocket{
+  width:10%;
+  cursor:pointer;              
+}
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rocket Launch</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <p class="heading center">Jamie's Website for FDM Group</p>
+    <img class="center"
+        src="https://upload.wikimedia.org/wikipedia/commons/c/cb/An_EPIC_Eclipse.gif"
+        alt="Spinning Globe" width="80%" height="80%">
+
+    <a href="https://science.nasa.gov/earth/" class="center">The Earth</a>
+
+
+<figure id="apodBox" class="center">
+  <img   id="apod" alt="NASA APOD">
+  <figcaption id="apodTitle"></figcaption>
+</figure>
+
+<p id="apodExplanation" class="center" style="max-width:60ch;margin:auto;"></p>
+
+<script defer>
+  fetch('https://api.nasa.gov/planetary/apod?api_key=5Tq4SxqBf0ilrVhHyyhkrAm0gFUkhAQfOP9KoTgw')
+    .then(r => r.json())
+    .then(data => {
+      const img   = document.getElementById('apod');
+      const title = document.getElementById('apodTitle');
+      const expl  = document.getElementById('apodExplanation');
+
+    img.src = data.url;
+        img.width = 800;
+        img.height = 600;
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '10px';
+        img.border = "2px solid";
+    img.alt = data.title;
+
+      title.textContent = data.title;
+      expl.textContent  = data.explanation;  
+    })
+</script>
+
+
+
+<div class="rocket_background">
+    <img class="rocket" src="rocket.png" alt="Left rocket">
+    <img class="rocket" src="rocket.png" alt="Right rocket">
+</div>
+
+<script>
+    document.querySelectorAll('.rocket').forEach(r => {
+    r.addEventListener('click', () => {
+    r.animate(
+      [
+        { transform: 'translateY(0)' },
+        { transform: 'translateY(-200vh)' }
+      ],
+      {
+        duration: 3500,
+        easing: 'ease-in',
+      }
+    );
+  });
+});
+
+  </script>
+
+  <p class="center">Click a rocket to launch it!</p>
+
+  <footer class="center"><p>Jamie's Website for FDM Group</p></footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
