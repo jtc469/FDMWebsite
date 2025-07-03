@@ -1,5 +1,5 @@
 .heading {
-  font-size: 20px;
+  font-size: 30px;
   font-style: italic;
 }
 
@@ -12,6 +12,21 @@ body {
   background-color: black;
 }
 
+a.box-link {
+  display: inline-block;
+  padding: 12px 12px;
+  background: #191919;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(78, 84, 200, 0.2);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 1px;
+}
+
+a.box-link:hover, a.box-link:focus {
+  text-decoration: underline;
+}
+
 .center {
   display: block;
   margin-left: auto;
@@ -19,16 +34,12 @@ body {
   text-align: center;
 }
 
-#apodBox { 
-  margin-top: 3cm;
-}
-
 .rocket_background{
   margin-top: 3cm;
-  background-color: rgb(23, 23, 23);
+  border-radius: 12px;
+  background-color: #191919;
   display:flex;                 
-  justify-content:space-between;
-  padding:0 ;                
+  justify-content:space-between;              
 }
 
 .rocket{
